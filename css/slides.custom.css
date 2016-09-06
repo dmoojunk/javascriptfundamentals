@@ -1,0 +1,36 @@
+.deck-container {
+  padding: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: initial;
+}
+
+.csstransitions.csstransforms .deck-container .slide {
+  transition: opacity 250ms ease-in-out 0ms;
+}
+
+.hidden {
+  display: none;
+}
+
+.deck-container .slide .deck-codemirror-result {
+  min-height: 1em;
+}
+
+.deck-container .slide .CodeMirror .button.solution {
+  margin-right: 105px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align:center;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+.deck-container .slide .CodeMirror {
+  font-family: consolas;
+}

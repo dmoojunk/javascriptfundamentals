@@ -1,0 +1,555 @@
+extends layout
+
+block slides
+  section.slide#title
+    :markdown
+      # JavaScript Fundamentals
+      ### Part 1: I have no idea what I'm doing
+
+  section.slide#intro-introduction
+    :markdown
+      ## JavaScript
+
+      * Fun
+      * Easy to learn
+      * Popular
+      * Gateway language
+
+  section.slide#intro-setup
+    :markdown
+      ## Setup
+
+      * Environment
+      * Developer console
+
+  section.slide#intro-environment
+    :markdown
+      ## Environment
+
+      * [jsFiddle](https://jsfiddle.net/)
+      * Developer console
+      * Sandbox / Playground
+      * Html / JS / CSS / Output windows
+
+  section.slide#intro-developer-console
+    :markdown
+      ## Developer console
+
+      * Right click > Inspect element
+      * JavaScript environment
+      * Testing and debugging
+
+    textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+      console.log('hello from the console');
+      alert('hello from the alert');
+      debugger;
+    //-
+
+    textarea.solution-code.code#code(name="code", mode="javascript", runnable="false", style="display: none;").
+      console.log('hello from the console');
+      alert('hello from the alert');
+      debugger;
+    //-
+
+  section.slide#intro-comments
+    :markdown
+      ## Comments
+
+      * Single line comment - //
+      * Multiline comment - /\* ... \*/
+
+    textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+      // This is a comment
+
+      /* This 
+         is
+         a
+         multiline
+         comment */
+
+      var a = 10; // Don't do this
+    //-
+
+  section.slide#basics-introduction
+    :markdown
+      ## JavaScript Basics
+      * Variables
+      * Data Types
+      * Basic Operators
+      * Objects
+      * Functions
+      * Scope
+      * this
+      * JavaScript Keywords
+
+  section.slide#basics-variables
+    :markdown
+      ## Variables
+      * Containers for storing data values
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x = 5;
+        var y = 6;
+        var z = x + y;
+        console.log(z);
+      //-
+
+    :markdown
+      * Much Like Algebra
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var price1 = 5;
+        var price2 = 6;
+        var total = price1 + price2;
+        console.log(total);
+      //-
+
+    :markdown
+      * Must be unique!
+      * Case sensistive
+      * Reserved words (like JavaScript keywords) cannot be used as names
+
+  section.slide#basics-types
+    :markdown
+      ## Data Types
+      
+      * Strings (text)
+      * Numbers
+      * Boolean (true/false)
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var pi = 3.142;
+        var name = 'David';
+        var over-engineered-presentation = true;
+      //-
+
+  section.slide#basics-operators
+    :markdown
+      ## Basic Operators
+      
+    <table>
+    <tbody><tr>
+    <th>Operator</th>
+    <th>Description</th>
+    </tr>
+    <tr>
+    <td>+</td>
+    <td>Addition</td>
+    </tr>
+    <tr>
+    <td>-</td>
+    <td>Subtraction</td>
+    </tr>
+    <tr>
+    <td>*</td>
+    <td>Multiplication</td>
+    </tr>
+    <tr>
+    <td>/</td>
+    <td>Division</td>
+    </tr>
+    <tr>
+    <td>%</td>
+    <td>Modulus</td>
+    </tr>
+    <tr>
+    <td>++</td>
+    <td>Increment</td>
+    </tr>
+    <tr>
+    <td>--</td>
+    <td>Decrement</td>
+    </tr>
+    </tbody></table>
+    <br/>
+    <br/><br/><br/>
+    <table class="w3-table-all notranslate">
+    <tbody><tr>
+    <th style="width:25%">Operator</th>
+    <th>Example</th>
+    <th>Same As</th>
+    </tr>
+    <tr>
+    <td>+=</td>
+    <td>x += y</td>
+    <td>x = x + y</td>
+    </tr>
+    <tr>
+    <td>-=</td>
+    <td>x -= y</td>
+    <td>x = x - y</td>
+    </tr>
+    <tr>
+    <td>*=</td>
+    <td>x *= y</td>
+    <td>x = x * y</td>
+    </tr>
+    </tbody></table>
+    <br/>
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x = 10;
+        x += 5;
+        console.log(x);
+      //-
+
+    <br/><br/><br/><br/>
+    :markdown
+      * String Operators
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        txt1 = "John";
+        txt2 = "Doe";
+        txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+      //-
+
+    <br/><br/><br/><br/>
+    :markdown
+      * If you add a number and a string, the result will be a string!
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        x = "Hello" + 5;
+        console.log(x);
+
+        y = "5" + 5;
+        //console.log(y);
+        //console.log(y * 10);
+      //-
+    <br/><br/><br/><br/>
+
+  section.slide#basics-objects
+    :markdown
+      ## Objects
+      * objectName.propertyName
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var myCar = {};
+        myCar.make = "Ford";
+        myCar.model = "Mustang";
+        myCar.year = 1969;
+
+        console.log(myCar);
+
+        //console.log(myCar.make);
+        //console.log(myCar.model);
+        //console.log(myCar.year);
+      //-
+    <br/><br/><br/><br/>
+    :markdown
+      * Unassigned properties of an object are undefined (and not null).
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var myCar = {};
+        console.log(myCar.notHere);
+      //-
+    <br/><br/><br/><br/>
+    :markdown
+      * objectName["propertyName"]
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var myCar = {}
+        myCar.make = "Ford";
+        myCar.model = "Mustang";
+        myCar.year = 1969;
+
+        console.log(myCar["make"]);
+
+        var propertyName = "model";
+        console.log(myCar[propertyName])
+      //-
+
+  section.slide#basics-functions
+    :markdown
+      ## Functions
+      * A subprogram / procedure / subroutine
+      * Contains the 'function body'
+      * Values can be passed in
+      * A value can be returned out
+      * is 'invoked' by something (called)
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        function name(parameter1, parameter2) {
+          //code to be executed
+          return (parameter1 + ' ' + parameter2);
+        }
+      //-
+
+      textarea.solution-code.code#code(name="code", mode="javascript", runnable="false", style="display: none;").
+        function getName(firstName, lastName) {
+          return (firstName + ' ' + lastName);
+        }
+        console.log(getName('John', 'Doe'));
+      //-
+
+    <br/><br/><br/><br/>
+    :markdown
+      ## Why?
+      * Reuse
+
+  section.slide#basics-scope
+    :markdown
+      ## Scope
+      * Set of variables, objects, and functions you have access to.
+      * Function scope - scope changes inside functions - its not block scope.
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        // code here can not use carName
+
+        function myFunction() {
+            var carName = "Volvo";
+
+            // code here can use carName
+
+        }
+      //-
+
+    <br/><br/><br/><br/>
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var carName = " Volvo";
+
+        // code here can use carName
+
+        function myFunction() {
+
+            // code here can use  carName 
+
+        }
+      //-
+  section.slide#basics-global-scope
+    :markdown
+      ## Global Scope
+      * Assign a value to a variable that has not been declared, it will automatically become a global variable
+      * Easily polluted
+      * Bug potential! Avoid
+      * Local variables are deleted when the function is completed
+      * Global variables are deleted when you close the page
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        myFunction();
+
+        // code here can use carName 
+
+        function myFunction() {
+            carName = "Volvo";
+        }
+      //-
+
+  section.slide#basics-hoisting
+    :markdown
+      ## Hoisting
+      * Moving declarations to the top.
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        x = 5; // Assign 5 to x
+        var x; // Declare x
+      //-
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x; // Declare x
+        x = 5; // Assign 5 to x
+      //-
+
+
+  section.slide#basics-this
+    :markdown
+      ## this
+      * When a function executes, it gets the this property — a variable with the value of the *invoking* object
+      * Always an object, *usually* the object you would expect.
+
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var car = {
+          make: 'Ford',
+          getMake: function() {
+            return this.make;
+          }
+        };
+
+        // car is the invoker
+        console.log(car.getMake());
+      //- 
+
+    :markdown
+      * Confusion with other invokers
+      * Click handlers
+      * Can use the Bind (), Apply (), or Call () method to specifically set the value of this.
+
+  section.slide#basics-keywords
+    :markdown
+      ## JavaScript Keywords
+    <table>
+    <tbody><tr>
+    <td>abstract</td>
+    <td>arguments</td>
+    <td>boolean</td>
+    <td>break</td>
+    <td>byte</td>
+    </tr>
+    <tr>
+    <td>case</td>
+    <td>catch</td>
+    <td>char</td>
+    <td>class*</td>
+    <td>const</td>
+    </tr>
+    <tr>
+    <td>continue</td>
+    <td>debugger</td>
+    <td>default</td>
+    <td>delete</td>
+    <td>do</td>
+    </tr>
+    <tr>
+    <td>double</td>
+    <td>else</td>
+    <td>enum*</td>
+    <td>eval</td>
+    <td>export*</td>
+    </tr>
+    <tr>
+    <td>extends*</td>
+    <td>false</td>
+    <td>final</td>
+    <td>finally</td>
+    <td>float</td>
+    </tr>
+    <tr>
+    <td>for</td>
+    <td>function</td>
+    <td>goto</td>
+    <td>if</td>
+    <td>implements</td>
+    </tr>
+    <tr>
+    <td>import*</td>
+    <td>in</td>
+    <td>instanceof</td>
+    <td>int</td>
+    <td>interface</td>
+    </tr>
+    <tr>
+    <td>let</td>
+    <td>long</td>
+    <td>native</td>
+    <td>new</td>
+    <td>null</td>
+    </tr>
+    <tr>
+    <td>package</td>
+    <td>private</td>
+    <td>protected</td>
+    <td>public</td>
+    <td>return</td>
+    </tr>
+    <tr>
+    <td>short</td>
+    <td>static</td>
+    <td>super*</td>
+    <td>switch</td>
+    <td>synchronized</td>
+    </tr>
+    <tr>
+    <td>this</td>
+    <td>throw</td>
+    <td>throws</td>
+    <td>transient</td>
+    <td>true</td>
+    </tr>
+    <tr>
+    <td>try</td>
+    <td>typeof</td>
+    <td>var</td>
+    <td>void</td>
+    <td>volatile</td>
+    </tr>
+    <tr>
+    <td>while</td>
+    <td>with</td>
+    <td>yield</td>
+    <td></td>
+    <td></td>
+    </tr>
+    </tbody></table>
+
+  section.slide#title
+    :markdown
+      # JavaScript Fundamentals
+      ### Part 2: I regret even starting this.
+
+  section.slide#program-flow
+    :markdown
+      ## Program flow
+
+      * Conditionals
+      * Switch
+      * For Loops
+      * While Loops
+      * Timers
+
+  section.slide#program-flow-conditionals
+    :markdown
+      ## Comparison
+      * The usual < > <= etc
+      * != / !== Not equals
+      * Plus some quirks 
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x = 10;
+        var y = "10";
+        console.log(x == y); //equal to
+      //-
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x = 10;
+        var y = "10";
+        console.log(x === y); // equal value and equal type 
+      //-
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var x = 10;
+        var y = "10";
+
+        if (x === y) {
+          console.log('match value and type')
+        } else if ( x == y ) {
+          console.log('match value')
+        } else {
+          console.log('no match')
+        }
+
+      //-
+
+    :markdown
+      ## Operators
+      * && - and
+      * || - or
+      * ! - not 
+
+      ## Ternary
+      * variablename = (condition) ? value1:value2 
+
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        var canVote = (age >= 18) ? "Yes" : "No";
+      //-
+
+

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"></html>
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"></html>
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"></html>
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Deck.js Starter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    <!-- Required stylesheets-->
+    <link rel="stylesheet" href="core/deck.core.css">
+    <!-- Extension CSS files go here. Remove or add as needed.-->
+    <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+    <!-- link(rel="stylesheet", href="extensions/navigation/deck.navigation.css")-->
+    <link rel="stylesheet" href="extensions/status/deck.status.css">
+    <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+    <!-- link(rel="stylesheet", href="extensions/scale/deck.scale.css")-->
+    <!-- Style theme. More available in /themes/style/ or create your own.-->
+    <link rel="stylesheet" href="themes/style/swiss.css">
+    <!-- Transition. More available in /themes/transition/ or create your own.-->
+    <link rel="stylesheet" href="themes/transition/fade.css">
+    <!-- Plugin: CodeMirror-->
+    <link rel="stylesheet" href="plugins/codemirror/deck.codemirror.css">
+    <link rel="stylesheet" href="plugins/codemirror/themes/elegant.css">
+    <!-- Custom styles.-->
+    <link rel="stylesheet" href="css/slides.custom.css">
+    <!-- Modernizr.-->
+    <script src="js/vendor/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div class="deck-container">
+      <section id="title" class="slide"><h1>JavaScript Fundamentals</h1>
+
+<h3>Part 1: I have no idea what I&#39;m doing</h3>
+      </section>
+      <section id="intro-introduction" class="slide"><h2>JavaScript</h2>
+
+<ul><li>Fun</li><li>Easy to learn</li><li>Popular</li><li>Gateway language</li></ul>
+      </section>
+      <section id="intro-setup" class="slide"><h2>Setup</h2>
+
+<ul><li>Environment</li><li>Developer console</li></ul>
+      </section>
+      <section id="intro-environment" class="slide"><h2>Environment</h2>
+
+<ul><li><a href="https://jsfiddle.net/">jsFiddle</a></li><li>Developer console</li><li>Sandbox / Playground</li><li>Html / JS / CSS / Output windows</li></ul>
+      </section>
+      <section id="intro-developer-console" class="slide"><h2>Developer console</h2>
+
+<ul><li>Right click &gt; Inspect element</li><li>JavaScript environment</li><li>Testing and debugging</li></ul>
+        <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+          console.log('hello from the console');
+          alert('hello from the alert');
+          debugger;
+        </textarea>
+        <textarea id="code" name="code" mode="javascript" runnable="false" style="display: none;" class="solution-code code">
+          console.log('hello from the console');
+          alert('hello from the alert');
+          debugger;
+        </textarea>
+      </section>
+      <section id="intro-comments" class="slide"><h2>Comments</h2>
+
+<ul><li>Single line comment - //</li><li>Multiline comment - /* ... */</li></ul>
+        <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+          // This is a comment
+          
+          /* This 
+             is
+             a
+             multiline
+             comment */
+             
+          var a = 10; // Don't do this
+        </textarea>
+      </section>
+      <section id="basics-introduction" class="slide"><h2>JavaScript Basics</h2>
+
+<ul><li>Variables</li><li>Data Types</li><li>Basic Operators</li><li>Objects</li><li>Functions</li><li>Scope</li><li>this</li><li>JavaScript Keywords</li></ul>
+      </section>
+      <section id="basics-variables" class="slide"><h2>Variables</h2>
+
+<ul><li>Containers for storing data values</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x = 5;
+            var y = 6;
+            var z = x + y;
+            console.log(z);
+          </textarea>
+        </div><ul><li>Much Like Algebra</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var price1 = 5;
+            var price2 = 6;
+            var total = price1 + price2;
+            console.log(total);
+          </textarea>
+        </div><ul><li>Must be unique!</li><li>Case sensistive</li><li>Reserved words (like JavaScript keywords) cannot be used as names</li></ul>
+      </section>
+      <section id="basics-types" class="slide"><h2>Data Types</h2>
+
+<ul><li>Strings (text)</li><li>Numbers</li><li>Boolean (true/false)</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var pi = 3.142;
+            var name = 'David';
+            var over-engineered-presentation = true;
+          </textarea>
+        </div>
+      </section>
+      <section id="basics-operators" class="slide"><h2>Basic Operators</h2><table>
+        <tbody><tr>
+        <th>Operator</th>
+        <th>Description</th>
+        </tr>
+        <tr>
+        <td>+</td>
+        <td>Addition</td>
+        </tr>
+        <tr>
+        <td>-</td>
+        <td>Subtraction</td>
+        </tr>
+        <tr>
+        <td>*</td>
+        <td>Multiplication</td>
+        </tr>
+        <tr>
+        <td>/</td>
+        <td>Division</td>
+        </tr>
+        <tr>
+        <td>%</td>
+        <td>Modulus</td>
+        </tr>
+        <tr>
+        <td>++</td>
+        <td>Increment</td>
+        </tr>
+        <tr>
+        <td>--</td>
+        <td>Decrement</td>
+        </tr>
+        </tbody></table>
+        <br/>
+        <br/><br/><br/>
+        <table class="w3-table-all notranslate">
+        <tbody><tr>
+        <th style="width:25%">Operator</th>
+        <th>Example</th>
+        <th>Same As</th>
+        </tr>
+        <tr>
+        <td>+=</td>
+        <td>x += y</td>
+        <td>x = x + y</td>
+        </tr>
+        <tr>
+        <td>-=</td>
+        <td>x -= y</td>
+        <td>x = x - y</td>
+        </tr>
+        <tr>
+        <td>*=</td>
+        <td>x *= y</td>
+        <td>x = x * y</td>
+        </tr>
+        </tbody></table>
+        <br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x = 10;
+            x += 5;
+            console.log(x);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>String Operators</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            txt1 = "John";
+            txt2 = "Doe";
+            txt3 = txt1 + " " + txt2;
+            console.log(txt3);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>If you add a number and a string, the result will be a string!</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            x = "Hello" + 5;
+            console.log(x);
+            
+            y = "5" + 5;
+            //console.log(y);
+            //console.log(y * 10);
+          </textarea>
+        </div><br/><br/><br/><br/>
+      </section>
+      <section id="basics-objects" class="slide"><h2>Objects</h2>
+
+<ul><li>objectName.propertyName</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var myCar = {};
+            myCar.make = "Ford";
+            myCar.model = "Mustang";
+            myCar.year = 1969;
+            
+            console.log(myCar);
+            
+            //console.log(myCar.make);
+            //console.log(myCar.model);
+            //console.log(myCar.year);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Unassigned properties of an object are undefined (and not null).</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var myCar = {};
+            console.log(myCar.notHere);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>objectName[&quot;propertyName&quot;]</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var myCar = {}
+            myCar.make = "Ford";
+            myCar.model = "Mustang";
+            myCar.year = 1969;
+            
+            console.log(myCar["make"]);
+            
+            var propertyName = "model";
+            console.log(myCar[propertyName])
+          </textarea>
+        </div>
+      </section>
+      <section id="basics-functions" class="slide"><h2>Functions</h2>
+
+<ul><li>A subprogram / procedure / subroutine</li><li>Contains the &#39;function body&#39;</li><li>Values can be passed in</li><li>A value can be returned out</li><li>is &#39;invoked&#39; by something (called)</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function name(parameter1, parameter2) {
+              //code to be executed
+              return (parameter1 + ' ' + parameter2);
+            }
+          </textarea>
+          <textarea id="code" name="code" mode="javascript" runnable="false" style="display: none;" class="solution-code code">
+            function getName(firstName, lastName) {
+              return (firstName + ' ' + lastName);
+            }
+            console.log(getName('John', 'Doe'));
+          </textarea>
+        </div><br/><br/><br/><br/><h2>Why?</h2>
+
+<ul><li>Reuse</li></ul>
+      </section>
+      <section id="basics-scope" class="slide"><h2>Scope</h2>
+
+<ul><li>Set of variables, objects, and functions you have access to.</li><li>Function scope - scope changes inside functions - its not block scope.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            // code here can not use carName
+            
+            function myFunction() {
+                var carName = "Volvo";
+                
+                // code here can use carName
+                
+            }
+          </textarea>
+        </div><br/><br/><br/><br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var carName = " Volvo";
+            
+            // code here can use carName
+            
+            function myFunction() {
+            
+                // code here can use  carName 
+                
+            }
+          </textarea>
+        </div>
+      </section>
+      <section id="basics-global-scope" class="slide"><h2>Global Scope</h2>
+
+<ul><li>Assign a value to a variable that has not been declared, it will automatically become a global variable</li><li>Easily polluted</li><li>Bug potential! Avoid</li><li>Local variables are deleted when the function is completed</li><li>Global variables are deleted when you close the page</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            myFunction();
+            
+            // code here can use carName 
+            
+            function myFunction() {
+                carName = "Volvo";
+            }
+          </textarea>
+        </div>
+      </section>
+      <section id="basics-hoisting" class="slide"><h2>Hoisting</h2>
+
+<ul><li>Moving declarations to the top.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            x = 5; // Assign 5 to x
+            var x; // Declare x
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x; // Declare x
+            x = 5; // Assign 5 to x
+          </textarea>
+        </div>
+      </section>
+      <section id="basics-this" class="slide"><h2>this</h2>
+
+<ul><li>When a function executes, it gets the this property — a variable with the value of the <em>invoking</em> object</li><li>Always an object, <em>usually</em> the object you would expect.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var car = {
+              make: 'Ford',
+              getMake: function() {
+                return this.make;
+              }
+            };
+            
+            // car is the invoker
+            console.log(car.getMake());
+          </textarea>
+        </div><ul><li>Confusion with other invokers</li><li>Click handlers</li><li>Can use the Bind (), Apply (), or Call () method to specifically set the value of this.</li></ul>
+      </section>
+      <section id="basics-keywords" class="slide"><h2>JavaScript Keywords</h2><table>
+        <tbody><tr>
+        <td>abstract</td>
+        <td>arguments</td>
+        <td>boolean</td>
+        <td>break</td>
+        <td>byte</td>
+        </tr>
+        <tr>
+        <td>case</td>
+        <td>catch</td>
+        <td>char</td>
+        <td>class*</td>
+        <td>const</td>
+        </tr>
+        <tr>
+        <td>continue</td>
+        <td>debugger</td>
+        <td>default</td>
+        <td>delete</td>
+        <td>do</td>
+        </tr>
+        <tr>
+        <td>double</td>
+        <td>else</td>
+        <td>enum*</td>
+        <td>eval</td>
+        <td>export*</td>
+        </tr>
+        <tr>
+        <td>extends*</td>
+        <td>false</td>
+        <td>final</td>
+        <td>finally</td>
+        <td>float</td>
+        </tr>
+        <tr>
+        <td>for</td>
+        <td>function</td>
+        <td>goto</td>
+        <td>if</td>
+        <td>implements</td>
+        </tr>
+        <tr>
+        <td>import*</td>
+        <td>in</td>
+        <td>instanceof</td>
+        <td>int</td>
+        <td>interface</td>
+        </tr>
+        <tr>
+        <td>let</td>
+        <td>long</td>
+        <td>native</td>
+        <td>new</td>
+        <td>null</td>
+        </tr>
+        <tr>
+        <td>package</td>
+        <td>private</td>
+        <td>protected</td>
+        <td>public</td>
+        <td>return</td>
+        </tr>
+        <tr>
+        <td>short</td>
+        <td>static</td>
+        <td>super*</td>
+        <td>switch</td>
+        <td>synchronized</td>
+        </tr>
+        <tr>
+        <td>this</td>
+        <td>throw</td>
+        <td>throws</td>
+        <td>transient</td>
+        <td>true</td>
+        </tr>
+        <tr>
+        <td>try</td>
+        <td>typeof</td>
+        <td>var</td>
+        <td>void</td>
+        <td>volatile</td>
+        </tr>
+        <tr>
+        <td>while</td>
+        <td>with</td>
+        <td>yield</td>
+        <td></td>
+        <td></td>
+        </tr>
+        </tbody></table>
+      </section>
+      <section id="title" class="slide"><h1>JavaScript Fundamentals</h1>
+
+<h3>Part 2: I regret even starting this.</h3>
+      </section>
+      <section id="program-flow" class="slide"><h2>Program flow</h2>
+
+<ul><li>Conditionals</li><li>Switch</li><li>For Loops</li><li>While Loops</li><li>Timers</li></ul>
+      </section>
+      <section id="program-flow-conditionals" class="slide"><h2>Comparison</h2>
+
+<ul><li>The usual &lt; &gt; &lt;= etc</li><li>!= / !== Not equals</li><li>Plus some quirks </li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x = 10;
+            var y = "10";
+            console.log(x == y); //equal to
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x = 10;
+            var y = "10";
+            console.log(x === y); // equal value and equal type 
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var x = 10;
+            var y = "10";
+            
+            if (x === y) {
+              console.log('match value and type')
+            } else if ( x == y ) {
+              console.log('match value')
+            } else {
+              console.log('no match')
+            }
+            
+          </textarea>
+        </div><h2>Operators</h2>
+
+<ul><li>&amp;&amp; - and</li><li>|| - or</li><li>! - not </li></ul>
+
+<h2>Ternary</h2>
+
+<ul><li>variablename = (condition) ? value1:value2 </li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">var canVote = (age >= 18) ? "Yes" : "No";</textarea>
+        </div>
+      </section>
+      <!-- deck.navigation snippet-->
+      <!-- a.deck-prev-link(href="#", title="Previous") &#8592;-->
+      <!-- a.deck-next-link(href="#", title="Next") &#8594;-->
+      <!-- deck.status snippet-->
+      <p class="deck-status"><span class="deck-status-current"></span>/<span class="deck-status-total"></span></p>
+      <!-- deck.goto snippet-->
+      <form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input id="goto-slide" type="text" name="slidenum" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+      </form>
+      <!--deck.hash snippet--><a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+    </div>
+    <!-- Required JS files.-->
+    <script src="js/vendor/jquery-3.1.0.min.js"></script>
+    <script src="js/vendor/coffee-script-1.4.0.min.js"></script>
+    <script src="core/deck.core.js"></script>
+    <!-- Plugin: CodeMirror (with CoffeeScript enhancements).-->
+    <script src="plugins/codemirror/codemirror.js"></script>
+    <script src="plugins/codemirror/mode/javascript/javascript.js"></script>
+    <!-- script(src="plugins/codemirror/mode/coffeescript/coffeescript.js")-->
+    <script src="plugins/codemirror/deck.codemirror.js"></script>
+    <!-- Extension JS files. Add or remove as needed.-->
+    <script src="extensions/hash/deck.hash.js"></script>
+    <script src="extensions/menu/deck.menu.js"></script>
+    <script src="extensions/goto/deck.goto.js"></script>
+    <script src="extensions/status/deck.status.js"></script>
+    <script src="extensions/navigation/deck.navigation.js"></script>
+    <!-- script(src="extensions/scale/deck.scale.js")-->
+    <!-- Initialize the deck.-->
+    <script>
+      $(function () {
+        $("textarea.code").each(function () {
+          var $code = $(this);
+          
+          // Strip initial empty line.
+          $code.html($code.html().replace(/^\s*\n/, ""));
+          
+          // Find indent, if any.
+          var match = /^(\s+)/.exec($code.html());
+          if (match) {
+            // Strip forward whitespace in first section.
+            $code.html($code.html()
+              .substr(match[0].length)
+              .split("\n" + match[0])
+              .join("\n")
+              .trim());
+          }
+        });
+        
+        // Start deck.
+        $.deck('.slide', {
+          codemirror: {
+            lineNumbers: true,
+            theme: "elegant",
+            indentUnit: 2,
+            indentWithTabs: false,
+            runnable: false
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
