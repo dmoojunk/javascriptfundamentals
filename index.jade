@@ -537,6 +537,7 @@ block slides
         }
 
       //-
+    <br/><br/><br/><br/>
 
     :markdown
       ## Operators
@@ -544,6 +545,16 @@ block slides
       * || - or
       * ! - not 
 
+    div
+      textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+        // If in stock and not reserved
+        if (item.inStock === true && !item.isReserved()){
+          console.log('available');
+        }
+      //-
+    <br/><br/><br/><br/>
+
+    :markdown
       ## Ternary
       * variablename = (condition) ? value1:value2 
 
@@ -551,5 +562,258 @@ block slides
       textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
         var canVote = (age >= 18) ? "Yes" : "No";
       //-
+
+  section.slide#program-flow-switch
+    :markdown
+      ## Switch
+      * Select one of many blocks of code to be executed
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          switch(expression) {
+              case n:
+                  code block
+                  break;
+              case n:
+                  code block
+                  break;
+              default:
+                  default code block
+          }
+        //-
+    <br/><br/><br/><br/>
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          switch (new Date().getDay()) {
+              case 0:
+                  day = "Sunday";
+                  break;
+              case 1:
+                  day = "Monday";
+                  break;
+              case 2:
+                  day = "Tuesday";
+                  break;
+              case 3:
+                  day = "Wednesday";
+                  break;
+              case 4:
+                  day = "Thursday";
+                  break;
+              case 5:
+                  day = "Friday";
+                  break;
+              case 6:
+                  day = "Saturday";
+          }
+          console.log('Today is ' + day + '!');
+        //-
+
+  section.slide#program-flow-for
+    :markdown
+      ## For
+      * Create loops
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          for ([initialization]; [condition]; [final-expression])
+            statement
+        //-
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          for (var i = 0; i < 9; i++) {
+            console.log("The number is " + i);
+            // more statements
+          }
+        //-
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = ["BMW", "Volvo", "Saab", "Ford"];
+          for (var i = 0; i < cars.length; i++) {
+            console.log(cars[i]);
+          }
+        //-
+
+  section.slide#program-flow-while
+    :markdown
+      ## While
+      * Create loops
+      * Danger!
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          while (condition) {
+              code block to be executed
+          }
+        //-
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var i = 0;
+          while (i < 10) {
+              console.log("The number is " + i);
+              i++;
+          }
+        //-
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = ["BMW", "Volvo", "Saab", "Ford"];
+          for (var i = 0; i < cars.length; i++) {
+            console.log(cars[i]);
+          }
+        //-
+
+    :markdown
+      ## Do While
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          do {
+              code block to be executed
+          }
+          while (condition);
+        //-
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var i = 0;
+          do {
+              console.log("The number is " + i);
+              i++;
+          }
+          while (i < 10);
+        //-
+
+
+  section.slide#program-flow-timers
+    :markdown
+      ## Timers
+      ### setTimeout(function, milliseconds)
+      * Executes a function, after waiting a specified number of milliseconds.
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          function myFunction() {
+            console.log('called');
+          }
+          setTimeout(myFunction, 3000);
+        //-
+    <br/><br/><br/><br/>
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          function myFunction() {
+            console.log('called');
+          }
+          var timeout = setTimeout(myFunction, 3000);
+          clearTimeout(timeout);
+        //-
+    <br/><br/><br/><br/>
+
+    :markdown
+      ### setInterval(function, milliseconds)
+      * Same as setTimeout(), but repeats the execution of the function continuously.
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          function myFunction() {
+            console.log('called');
+          }
+          setInterval(myFunction, 3000);
+        //-
+    <br/><br/><br/><br/>
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          function myFunction() {
+            console.log('called');
+          }
+          var interval = setInterval(myFunction, 3000);
+          clearInterval(interval);
+        //-
+    <br/><br/><br/><br/>
+
+  section.slide#title
+    :markdown
+      # JavaScript Fundamentals
+      ### Part 3: Down to business
+
+  section.slide#arrays
+    :markdown
+      ## Arrays
+      * Can hold numerous 'things'
+      * zero based
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = [
+            'Saab',
+            'Volvo',
+            'BMW'
+          ];
+          console.log(cars[0]);
+        //-
+    <br/><br/><br/><br/>
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = [
+            'Saab',
+            'Volvo',
+            'BMW'
+          ];
+          cars[0] = 'Ford';
+          console.log(cars[0]);
+        //-
+    <br/><br/><br/><br/>
+
+    :markdown
+      * Arrays are Objects
+      * Built-in array properties and methods
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = [
+            'Saab',
+            'Volvo',
+            'BMW'
+          ];  
+
+          var x = cars.length;
+          console.log(x);
+
+          var y = cars.sort();
+          console.log(y);
+        //-
+    <br/><br/><br/><br/>
+
+    :markdown
+      * Push / Pop
+      * Add / Remove
+
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = [
+            'Saab',
+            'Volvo',
+            'BMW'
+          ];  
+
+          console.log(cars.push('Ford'));
+          console.log(cars);
+        //-
+    div
+        textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
+          var cars = [
+            'Saab',
+            'Volvo',
+            'BMW'
+          ];  
+
+          console.log(cars.pop());
+          console.log(cars);
+        //-
+    <br/><br/><br/><br/>
+    :markdown
+      * indexOf - find position of element
+      * shift - removes the first element
+      * unshift - adds new element to the beginning and returns the new length
+      * slice - selects part of the array
+
 
 

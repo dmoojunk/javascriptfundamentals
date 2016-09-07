@@ -14,7 +14,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Deck.js Starter</title>
+    <title>JavaScript Fundamentals</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=1024, user-scalable=no">
     <!-- Required stylesheets-->
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="themes/transition/fade.css">
     <!-- Plugin: CodeMirror-->
     <link rel="stylesheet" href="plugins/codemirror/deck.codemirror.css">
-    <link rel="stylesheet" href="plugins/codemirror/themes/elegant.css">
+    <link rel="stylesheet" href="plugins/codemirror/themes/xq-light.css">
     <!-- Custom styles.-->
     <link rel="stylesheet" href="css/slides.custom.css">
     <!-- Modernizr.-->
@@ -472,16 +472,249 @@
             }
             
           </textarea>
-        </div><h2>Operators</h2>
+        </div><br/><br/><br/><br/><h2>Operators</h2>
 
 <ul><li>&amp;&amp; - and</li><li>|| - or</li><li>! - not </li></ul>
-
-<h2>Ternary</h2>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            // If in stock and not reserved
+            if (item.inStock === true && !item.isReserved()){
+              console.log('available');
+            }
+          </textarea>
+        </div><br/><br/><br/><br/><h2>Ternary</h2>
 
 <ul><li>variablename = (condition) ? value1:value2 </li></ul>
         <div>
           <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">var canVote = (age >= 18) ? "Yes" : "No";</textarea>
         </div>
+      </section>
+      <section id="program-flow-switch" class="slide"><h2>Switch</h2>
+
+<ul><li>Select one of many blocks of code to be executed</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            switch(expression) {
+                case n:
+                    code block
+                    break;
+                case n:
+                    code block
+                    break;
+                default:
+                    default code block
+            }
+          </textarea>
+        </div><br/><br/><br/><br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            switch (new Date().getDay()) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+            }
+            console.log('Today is ' + day + '!');
+          </textarea>
+        </div>
+      </section>
+      <section id="program-flow-for" class="slide"><h2>For</h2>
+
+<ul><li>Create loops</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            for ([initialization]; [condition]; [final-expression])
+              statement
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            for (var i = 0; i < 9; i++) {
+              console.log("The number is " + i);
+              // more statements
+            }
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = ["BMW", "Volvo", "Saab", "Ford"];
+            for (var i = 0; i < cars.length; i++) {
+              console.log(cars[i]);
+            }
+          </textarea>
+        </div>
+      </section>
+      <section id="program-flow-while" class="slide"><h2>While</h2>
+
+<ul><li>Create loops</li><li>Danger!</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            while (condition) {
+                code block to be executed
+            }
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var i = 0;
+            while (i < 10) {
+                console.log("The number is " + i);
+                i++;
+            }
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = ["BMW", "Volvo", "Saab", "Ford"];
+            for (var i = 0; i < cars.length; i++) {
+              console.log(cars[i]);
+            }
+          </textarea>
+        </div><h2>Do While</h2>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            do {
+                code block to be executed
+            }
+            while (condition);
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var i = 0;
+            do {
+                console.log("The number is " + i);
+                i++;
+            }
+            while (i < 10);
+          </textarea>
+        </div>
+      </section>
+      <section id="program-flow-timers" class="slide"><h2>Timers</h2>
+
+<h3>setTimeout(function, milliseconds)</h3>
+
+<ul><li>Executes a function, after waiting a specified number of milliseconds.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function myFunction() {
+              console.log('called');
+            }
+            setTimeout(myFunction, 3000);
+          </textarea>
+        </div><br/><br/><br/><br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function myFunction() {
+              console.log('called');
+            }
+            var timeout = setTimeout(myFunction, 3000);
+            clearTimeout(timeout);
+          </textarea>
+        </div><br/><br/><br/><br/><h3>setInterval(function, milliseconds)</h3>
+
+<ul><li>Same as setTimeout(), but repeats the execution of the function continuously.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function myFunction() {
+              console.log('called');
+            }
+            setInterval(myFunction, 3000);
+          </textarea>
+        </div><br/><br/><br/><br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function myFunction() {
+              console.log('called');
+            }
+            var interval = setInterval(myFunction, 3000);
+            clearInterval(interval);
+          </textarea>
+        </div><br/><br/><br/><br/>
+      </section>
+      <section id="title" class="slide"><h1>JavaScript Fundamentals</h1>
+
+<h3>Part 3: Down to business</h3>
+      </section>
+      <section id="arrays" class="slide"><h2>Arrays</h2>
+
+<ul><li>Can hold numerous &#39;things&#39;</li><li>zero based</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];
+            console.log(cars[0]);
+          </textarea>
+        </div><br/><br/><br/><br/>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];
+            cars[0] = 'Ford';
+            console.log(cars[0]);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Arrays are Objects</li><li>Built-in array properties and methods</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];  
+            
+            var x = cars.length;
+            console.log(x);
+            
+            var y = cars.sort();
+            console.log(y);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Push / Pop</li><li>Add / Remove</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];  
+            
+            console.log(cars.push('Ford'));
+            console.log(cars);
+          </textarea>
+        </div>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];  
+            
+            console.log(cars.pop());
+            console.log(cars);
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>indexOf - find position of element</li><li>shift - removes the first element</li><li>unshift - adds new element to the beginning and returns the new length</li><li>slice - selects part of the array</li></ul>
       </section>
       <!-- deck.navigation snippet-->
       <!-- a.deck-prev-link(href="#", title="Previous") &#8592;-->
@@ -538,7 +771,7 @@
         $.deck('.slide', {
           codemirror: {
             lineNumbers: true,
-            theme: "elegant",
+            theme: "xq-light",
             indentUnit: 2,
             indentWithTabs: false,
             runnable: false
