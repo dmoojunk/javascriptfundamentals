@@ -690,7 +690,7 @@
             var y = cars.sort();
             console.log(y);
           </textarea>
-        </div><br/><br/><br/><br/><ul><li>Push / Pop</li><li>Add / Remove</li></ul>
+        </div><br/><br/><br/><br/><ul><li>Push / Pop</li></ul>
         <div>
           <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
             var cars = [
@@ -715,6 +715,152 @@
             console.log(cars);
           </textarea>
         </div><br/><br/><br/><br/><ul><li>indexOf - find position of element</li><li>shift - removes the first element</li><li>unshift - adds new element to the beginning and returns the new length</li><li>slice - selects part of the array</li></ul>
+      </section>
+      <section id="iterating-arrays" class="slide"><h2>Iterating Arrays</h2>
+
+<ul><li>Sequential for loop</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];
+            // EVERYTHING
+            var arrayLength = cars.length;
+            for (var i = 0; i < arrayLength; i++) {
+              console.log(cars[i]);
+            }
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>forEach</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];
+            // IE9 +
+            cars.forEach( function(car) { 
+              console.log(car);
+            });
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>for...of</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var cars = [
+              'Saab',
+              'Volvo',
+              'BMW'
+            ];
+            // ONLY WORKS IN ECMASCRIPT 2015 - Edge/Safari 9
+            for (car of cars) {
+              console.log(car);
+            }
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>iterating objects</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            var band = [
+              {firstName : 'John', lastName: 'Lennon'}, 
+              {firstName : 'Paul', lastName: 'McCartney'}
+            ];
+            
+            for(var member of band){
+              console.log(member.firstName + ' ' + member.lastName); 
+            }
+          </textarea>
+        </div><br/><br/><br/><br/>
+      </section>
+      <section id="working-with-objects" class="slide"><h2>Working with Objects</h2>
+
+<ul><li>An object is a collection of properties, and a property is an association between a name (or key) and a value. A property&#39;s value can be a function, in which case the property is known as a method</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function Person(firstName, lastName) {
+              this.firstName = firstName;
+              this.lastName = lastName;
+            }
+            
+            function Car(make, model, year, owner) {
+              this.make = make;
+              this.model = model;
+              this.year = year;
+              this.owner = owner;
+            }
+            
+            var john = new Person('John', 'Lennon');
+            var car = new Car('Ford', 'Mustang', 1960, john);
+            
+            console.log(car);
+            
+            
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Functions</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function Person(firstName, lastName) {
+              this.firstName = firstName;
+              this.lastName = lastName;
+              this.getName = function() {
+                return this.firstName + ' ' + this.lastName;
+              };
+            }
+            
+            function Car(make, model, year, owner) {
+              this.make = make;
+              this.model = model;
+              this.year = year;
+              this.owner = owner;
+            }
+            
+            var david = new Person('John', 'Lennon');
+            var car = new Car('Ford', 'Mustang', 1960, john);
+            
+            console.log(car.owner.getName());
+            
+            
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Extending</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function Person(firstName, lastName) {
+              this.firstName = firstName;
+              this.lastName = lastName;
+            }
+            
+            function Car(make, model, year, owner) {
+              this.make = make;
+              this.model = model;
+              this.year = year;
+              this.owner = owner;
+            }
+            
+            var david = new Person('David', 'Moorhead');
+            var car = new Car('Ford', 'Mustang', 1960, david);
+            
+            car.color = 'Red';
+            
+            console.log(car.color);
+            
+            
+          </textarea>
+        </div><br/><br/><br/><br/><ul><li>Comparing</li><li>Objects are a reference type. </li><li>Unable to compare like value types.</li><li>No simple, reliable way. Use helper library.</li></ul>
+        <div>
+          <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
+            function Person(firstName, lastName) {
+              this.firstName = firstName;
+              this.lastName = lastName;
+            }
+            
+            var john = new Person('John', 'Lennon');
+            var john2 = new Person('John', 'Lennon');
+            
+            console.log(john == john2);
+            console.log(john === john2);
+            
+          </textarea>
+        </div>
       </section>
       <!-- deck.navigation snippet-->
       <!-- a.deck-prev-link(href="#", title="Previous") &#8592;-->
